@@ -1,0 +1,19 @@
+article {
+    margin: 0px 200px 0px 200px;
+    width: 1535px;
+}
+header{
+    width: auto;
+}
+#header {
+    display: flex;
+    align-items: center;
+    border: 1px black solid;
+    padding: 0x 32px 0 32px;
+}
+#header input{
+    width: 60%;
+}
+#header a {
+    padding: 0px 0px 0px 24px;
+}
