@@ -1,6 +1,5 @@
 article {
     margin: 0px 200px 0px 200px;
-    width: 1535px;
 }
 header{
     width: auto;
@@ -8,11 +7,13 @@ header{
 #header {
     display: flex;
     align-items: center;
-    border: 1px black solid;
+    border: 1px rgb(228, 3, 3) solid;
     padding: 0x 32px 0 32px;
+
 }
 #header input{
     width: 60%;
+    height: 30px;
 }
 #header a {
     padding: 0px 0px 0px 24px;
