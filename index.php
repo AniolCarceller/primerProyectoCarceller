@@ -61,8 +61,61 @@
             </div>
         </div>
     </article>
-    <footer>
-
+    <article class="productosInicio">
+        <h1>Raciones</h1>
+        <div class="productosAlignInicio">
+            <div class="producto">
+                <img src="img/racion1.png" alt="">
+                <h3>Pops de pollo</h3>
+                <p>Bocaditos de pechuga de pollo empanado. Elige tu salsa favorita para dipear.</p>
+            </div>
+            <div class="producto">
+                <img src="img/racion2.png" alt="">
+                <h3>Cheese & Bacon Fries</h3>
+                <p>Nuestras patatas con bacon crispy y deliciosa salsa cheddar.</p>
+            </div>
+            <div class="producto">
+                <img src="img/racion3.png" alt="">
+                <h3>Hot Cheddar</h3>
+                <p>Triángulos de queso Cheddar con un toque picante de chile rojo (5uds). Elige tu salsa favorita para dipear.</p>
+            </div>
+            <div class="producto">
+                <img src="img/racion4.png" alt="">
+                <h3>Gouda Rings</h3>
+                <p>Aros de queso Gouda (5 uds). Elige tu salsa favorita para dipear</p>
+            </div>
+            <div class="producto">
+                <img src="img/racion5.png" alt="">
+                <h3>Patatas Grill</h3>
+                <p>Crujientes patatas horneadas. Elige tu salsa preferida para dipear.</p>
+            </div>
+        </div>
+    </article>
+    <footer class="footer">
+        <div class="footer-section logo">
+            <img src="img/logo.png" alt="Logo de WallaFood">
+            <p>&copy; 2013-2024 Wallafood. Todos los derechos reservados</p>
+        </div>
+        <div class="footer-section">
+            <h4>Wallafood</h4>
+            <ul>
+                <li><a href="#">Quiénes somos</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Legal</h4>
+            <ul>
+                <li><a href="#">Aviso legal</a></li>
+                <li><a href="#">Condiciones de uso</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Política de Cookies</a></li>
+            </ul>
+        </div>
+        <div class="footer-section social">
+            <a href="#"><img src="img/facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="img/twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="img/instagram-icon.png" alt="Instagram"></a>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
