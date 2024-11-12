@@ -121,19 +121,12 @@ header{
 .producto p {
     font-size: 0.9rem;
     color: #666;
-    margin: 0;
 }
 
-.producto:hover {
-    transform: translateY(-2px);
-}
-
-.footer {
+footer {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    background-color: #f9f9f9;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 20px;
-    border-top: 2px solid #e0e0e0;
     gap: 20px;
     align-items: start;
 }
