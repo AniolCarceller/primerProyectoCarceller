@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wallafood</title>
-    <link rel="stylesheet" href="css/style.css?ver=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css?ver=1">
 </head>
 <body>
     <header>
@@ -31,63 +31,102 @@
             <img src="img/imagenbanner.png" alt="" class="img-fluid">
         </div>
     </article>
-    <article class="productosInicio">
-        <h1>Pizzas</h1>
-        <div class="productosAlignInicio">
-            <div class="producto">
-                <img src="img/pizza1.png" alt="">
-                <h3>Melanzani</h3>
-                <p>Berenjena, queso mozzarella, tomate, albahaca fresca, Ajo, aceite de oliva, queso parmesano</p>
+    <h1>Pizzas</h1>
+    <div class="d-flex justify-content-center">
+        <article class="productosInicio container d-flex justify-content-center">
+            <div class="row">
+                <!-- Columna 1 -->
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="producto">
+                        <img src="img/pizza1.png" alt="" class="img-fluid">
+                        <h3>Melanzani</h3>
+                        <p>Berenjena, queso mozzarella, tomate, albahaca fresca, Ajo, aceite de oliva, queso parmesano</p>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="producto">
+                        <img src="img/pizza2.png" alt="" class="img-fluid">
+                        <h3>Pepperoni</h3>
+                        <p>Pepperoni, queso mozzarella, salsa de tomate, orégano</p>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="producto">
+                        <img src="img/pizza3.png" alt="" class="img-fluid rounded">
+                        <h3>Margherita</h3>
+                        <p>Salsa de tomate, queso mozzarella, albahaca fresca, aceite de oliva</p>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="producto">
+                        <img src="img/pizza4.png" alt="" class="img-fluid rounded">
+                        <h3>Al Capone</h3>
+                        <p>Salsa de tomate, queso mozzarella, pepperoni, jamón, salchicha, pimiento, cebolla, aceitunas negras, orégano</p>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="producto">
+                        <img src="img/pizza5.png" alt="" class="img-fluid rounded">
+                        <h3>The Italian Job</h3>
+                        <p>Salsa de tomate, queso mozzarella, jamón serrano, rúcula, tomates cherry, lascas de parmesano, aceite de oliva</p>
+                    </div>
+                </div>
             </div>
-            <div class="producto">
-                <img src="img/pizza2.png" alt="">
-                <h3>Pepperoni</h3>
-                <p>Pepperoni, queso mozzarella, salsa de tomate, orégano</p>
+        </article>
+    </div>
+    <h1>Raciones</h1>
+    <div class="d-flex justify-content-center">
+        <article class="productosInicio container d-flex justify-content-center">
+            <div class="row">
+                <!-- Columna 1 -->
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="producto">
+                        <img src="img/racion1.png" alt="" class="img-fluid">
+                        <h3>Pops de pollo</h3>
+                        <p>Bocaditos de pechuga de pollo empanado. Elige tu salsa favorita para dipear.</p>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="producto">
+                        <img src="img/racion2.png" alt="" class="img-fluid">
+                        <h3>Cheese & Bacon Fries</h3>
+                        <p>Nuestras patatas con bacon crispy y deliciosa salsa cheddar.</p>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="producto">
+                        <img src="img/racion3.png" alt="" class="img-fluid rounded">
+                        <h3>Hot Cheddar</h3>
+                        <p>Triángulos de queso Cheddar con un toque picante de chile rojo (5uds). Elige tu salsa favorita para dipear.</p>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="producto">
+                        <img src="img/racion4.png" alt="" class="img-fluid rounded">
+                        <h3>Gouda Rings</h3>
+                        <p>Aros de queso Gouda (5 uds). Elige tu salsa favorita para dipear</p>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="producto">
+                        <img src="img/racion5.png" alt="" class="img-fluid rounded">
+                        <h3>Patatas Grill</h3>
+                        <p>Crujientes patatas horneadas. Elige tu salsa preferida para dipear.</p>
+                    </div>
+                </div>
             </div>
-            <div class="producto">
-                <img src="img/pizza3.png" alt="">
-                <h3>Margherita</h3>
-                <p>Salsa de tomate, queso mozzarella, albahaca fresca, aceite de oliva</p>
+        </article>
+    </div>
+    <article id="">
+        <div>
+            <img src="" alt="">
+            <div>
+                <h2>Encontrar la carta</h2>
+                <p>Accede a la carta mediante el header o mediante este enlace</p>
+                <a href="">Nuestra carta</a>
             </div>
-            <div class="producto">
-                <img src="img/pizza4.png" alt="">
-                <h3>Al Capone</h3>
-                <p>Salsa de tomate, queso mozzarella, pepperoni, jamón, salchicha, pimiento, cebolla, aceitunas negras, orégano</p>
-            </div>
-            <div class="producto">
-                <img src="img/pizza5.png" alt="">
-                <h3>The Italian Job</h3>
-                <p>Salsa de tomate, queso mozzarella, jamón serrano, rúcula, tomates cherry, lascas de parmesano, aceite de oliva</p>
-            </div>
-        </div>
-    </article>
-    <article class="productosInicio">
-        <h1>Raciones</h1>
-        <div class="productosAlignInicio">
-            <div class="producto">
-                <img src="img/racion1.png" alt="">
-                <h3>Pops de pollo</h3>
-                <p>Bocaditos de pechuga de pollo empanado. Elige tu salsa favorita para dipear.</p>
-            </div>
-            <div class="producto">
-                <img src="img/racion2.png" alt="">
-                <h3>Cheese & Bacon Fries</h3>
-                <p>Nuestras patatas con bacon crispy y deliciosa salsa cheddar.</p>
-            </div>
-            <div class="producto">
-                <img src="img/racion3.png" alt="">
-                <h3>Hot Cheddar</h3>
-                <p>Triángulos de queso Cheddar con un toque picante de chile rojo (5uds). Elige tu salsa favorita para dipear.</p>
-            </div>
-            <div class="producto">
-                <img src="img/racion4.png" alt="">
-                <h3>Gouda Rings</h3>
-                <p>Aros de queso Gouda (5 uds). Elige tu salsa favorita para dipear</p>
-            </div>
-            <div class="producto">
-                <img src="img/racion5.png" alt="">
-                <h3>Patatas Grill</h3>
-                <p>Crujientes patatas horneadas. Elige tu salsa preferida para dipear.</p>
+            <div>
+                <h2>Pagos 100% seguros</h2>
             </div>
         </div>
     </article>

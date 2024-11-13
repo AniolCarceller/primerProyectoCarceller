@@ -95,19 +95,12 @@ header{
     color: #2a4d69;
 }
 
-.productosAlignInicio {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 20px;
-}
-
 .producto {
     padding: 15px;
 }
 
 .producto img {
-    width: 100%;
-    height: auto;
+    width: 214px;
     margin-bottom: 10px;
     background-color: var(--backgroundproduct);
     border-radius: 25px;

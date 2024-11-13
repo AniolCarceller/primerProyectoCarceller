@@ -9,13 +9,27 @@
     
 
     <script>
-        const API_URL = "https://localhost/DAW2/primerProyectoCarceller/api/api.php";
+        const API_URL = "http://localhost/DAW2/primerProyectoCarceller/api/api.php";
 
         async function getUsers() {
             const respuesta = await fetch(API_URL);
             const datos = await respuesta.json();
             
             console.log(datos);
+        }
+        async function addUser() {
+            const datos = {
+                'nombre':'David',
+                'edad':25
+            }
+            const respuesta = await fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(datos)
+            })
+            
         }
         document.addEventListener("obtenerusuarios").
         addEventListener("click", getUsers())
