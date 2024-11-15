@@ -4,8 +4,8 @@ class productoController {
     public function index(){
         include "views/index.php";
     }
-    public function peru(){
-        include "views/peru.php";
+    public function carta(){
+        include "views/carta.php";
     }
     //aniol pon cosas de base de datos 
 }
