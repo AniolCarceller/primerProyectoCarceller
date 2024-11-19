@@ -1,3 +1,9 @@
+<?php
+include_once("config/DatabaseAccessObjectProductos.php");
+
+// Incluir las clases de productos que vayas a manejar (en este caso, 'Product' y 'Comida')
+include_once("models/Productos/Comida.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,46 +25,28 @@
     </article>
     <h1>Pizzas</h1>
     <div class="d-flex justify-content-center">
-        <article class="productosInicio container d-flex justify-content-center">
-            <div class="row">
-                <!-- Columna 1 -->
+    <article class="productosInicio container d-flex justify-content-center">
+        <div class="row">
+            <!-- Limitar a los primeros 5 productos -->
+            <?php
+                $productosLimitados = array_slice($productos, 0, 5); // Solo tomamos los primeros 5 productos
+                foreach ($productosLimitados as $producto): 
+            ?>
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="producto">
-                        <img src="/img/pizza1.png" alt="" class="img-fluid">
-                        <h3>Melanzani</h3>
-                        <p>Berenjena, queso mozzarella, tomate, albahaca fresca, Ajo, aceite de oliva, queso parmesano</p>
+                        <!-- Imagen del producto -->
+                        <img src="<?php echo $producto->GetImagen(); ?>" alt="" class="img-fluid">
+                        
+                        <!-- Nombre del producto -->
+                        <h3><?php echo $producto->GetNombre(); ?></h3>
+                        
+                        <!-- Descripción del producto -->
+                        <p><?php echo $producto->GetDescripcion(); ?></p>
                     </div>
                 </div>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="producto">
-                        <img src="/img/pizza2.png" alt="" class="img-fluid">
-                        <h3>Pepperoni</h3>
-                        <p>Pepperoni, queso mozzarella, salsa de tomate, orégano</p>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="producto">
-                        <img src="/img/pizza3.png" alt="" class="img-fluid rounded">
-                        <h3>Margherita</h3>
-                        <p>Salsa de tomate, queso mozzarella, albahaca fresca, aceite de oliva</p>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="producto">
-                        <img src="/img/pizza4.png" alt="" class="img-fluid rounded">
-                        <h3>Al Capone</h3>
-                        <p>Salsa de tomate, queso mozzarella, pepperoni, jamón, salchicha, pimiento, cebolla, aceitunas negras, orégano</p>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="producto">
-                        <img src="/img/pizza5.png" alt="" class="img-fluid rounded">
-                        <h3>The Italian Job</h3>
-                        <p>Salsa de tomate, queso mozzarella, jamón serrano, rúcula, tomates cherry, lascas de parmesano, aceite de oliva</p>
-                    </div>
-                </div>
-            </div>
-        </article>
+            <?php endforeach; ?>
+        </div>
+    </article>
     </div>
     <h1>Raciones</h1>
     <div class="d-flex justify-content-center">

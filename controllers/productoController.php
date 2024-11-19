@@ -1,20 +1,15 @@
 <?php
-include_once("config/DatabaseAccessObject.php");
+include_once("config/DatabaseAccessObjectProductos.php");
 class productoController {
     public function index()
     {
-        $dao = new DatabaseAccessObject();
-        $productos = $dao->getAllCamisetas("nombre");
+        $dao = new DatabaseAccessObjectProductos();
+
+        // Obtener camisetas como objetos Shirt
+        $productos = $dao->getAllProductos("nombre");
+        
+        // Incluir la vista y pasar los datos
         include_once("views/index.php");
-        while ($row = $productos->fetch_assoc()) {
-            // Muestra los datos de la fila
-            echo "ID: " . $row['id_producto'] . "<br>";
-            echo "Nombre: " . $row['nombre'] . "<br>";
-            echo "Descripción: " . $row['descripcion'] . "<br>";
-            echo "Ingredientes: " . $row['ingredientes'] . "<br>";
-            echo "Precio: " . $row['precio'] . "<br>";
-            echo "<hr>"; // Línea de separación entre productos
-        }
     }
     public function carta(){
         include "views/carta.php";
