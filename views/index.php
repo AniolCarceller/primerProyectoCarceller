@@ -1,5 +1,5 @@
 <?php
-include_once("config/DatabaseAccessObjectProductos.php");
+include_once("models/DatabaseAccessObjectProductos.php");
 
 // Incluir las clases de productos que vayas a manejar (en este caso, 'Product' y 'Comida')
 include_once("models/Productos/Comida.php");
@@ -30,7 +30,7 @@ include_once("models/Productos/Comida.php");
             <!-- Limitar a los primeros 5 productos -->
             <?php
                 $productosLimitados = array_slice($productos, 0, 5); // Solo tomamos los primeros 5 productos
-                foreach ($productosLimitados as $producto): 
+                foreach ($productosLimitados as $producto):
             ?>
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="producto">

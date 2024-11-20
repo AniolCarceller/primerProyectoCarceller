@@ -1,11 +1,13 @@
 <?php
 
 abstract class Product
-{
+{  
+    protected $id;
     protected $nombre;
+    protected $descripcion;
+    protected $ingredientes;
     protected $precio;
-    protected $talla;
-    protected $tipo;
+    protected $imagen;
     
     /*
     // Para poder usar fetch_object hay que vaciar el construct
@@ -17,9 +19,19 @@ abstract class Product
     }
     */
 
-    public function __construct()
+    public function __construct($id, $nombre, $descripcion, $ingredientes, $precio, $imagen)
     {
+        $this->id = $id;
+        $this->nombre = $nombre;
+        $this->descripcion = $descripcion;
+        $this->ingredientes = $ingredientes;
+        $this->precio = $precio;
+        $this->imagen = $imagen;
 
+    }
+    public function GetId()
+    {
+        return $this->id;
     }
 
     public function GetNombre()
@@ -27,14 +39,28 @@ abstract class Product
         return $this->nombre;
     }
 
+    public function GetDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    public function GetIngredientes()
+    {
+        return $this->ingredientes;
+    }
+
     public function GetPrecio()
     {
         return $this->precio;
     }
-
-    public function GetTalla()
+    public function GetImagen()
     {
-        return $this->talla;
+        return $this->imagen;
+    }
+
+    public function SetId($value)
+    {
+        $this->nombre = $value;
     }
 
     public function SetNombre($value)
@@ -42,14 +68,24 @@ abstract class Product
         $this->nombre = $value;
     }
 
+    public function SetDescripcion($value)
+    {
+        $this->descripcion = $value;
+    }
+
+    public function SetIngredientes($value)
+    {
+        $this->ingredientes = $value;
+    }
+
     public function SetPrecio($value)
     {
         $this->precio = $value;
     }
-
-    public function SetTalla($value)
+    
+    public function SetImagen($value)
     {
-        $this->talla = $value;
+        $this->imagen = $value;
     }
 }
 
