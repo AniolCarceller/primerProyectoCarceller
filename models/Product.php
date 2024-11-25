@@ -19,7 +19,7 @@ abstract class Product
     }
     */
 
-    public function __construct($id, $nombre, $descripcion, $ingredientes, $precio, $imagen)
+    public function __construct($id, $nombre, $descripcion, $ingredientes, $precio, $imagen, $tipo)
     {
         $this->id = $id;
         $this->nombre = $nombre;
@@ -27,6 +27,7 @@ abstract class Product
         $this->ingredientes = $ingredientes;
         $this->precio = $precio;
         $this->imagen = $imagen;
+        $this->tipo = $tipo;
 
     }
     public function GetId()
@@ -57,6 +58,10 @@ abstract class Product
     {
         return $this->imagen;
     }
+    public function GetTipo()
+    {
+        return $this->tipo;
+    }
 
     public function SetId($value)
     {
@@ -86,6 +91,10 @@ abstract class Product
     public function SetImagen($value)
     {
         $this->imagen = $value;
+    }
+    public function SetTipo($value)
+    {
+        $this->tipo = $value;
     }
 }
 

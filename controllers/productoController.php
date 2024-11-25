@@ -4,15 +4,12 @@ class productoController {
     public function index()
     {
         $dao = new DatabaseAccessObjectProductos();
-
-        // Obtener camisetas como objetos Shirt
         $productos = $dao->getAllProductos("nombre");
-        foreach ($productos as $producto){
-            var_dump($producto->getNombre());
-        }
-        // Incluir la vista y pasar los datos
+        include "views/index.php";
     }
     public function carta(){
+        $dao = new DatabaseAccessObjectProductos();
+        $productos = $dao->getAllProductos("nombre");
         include "views/carta.php";
     }
 }

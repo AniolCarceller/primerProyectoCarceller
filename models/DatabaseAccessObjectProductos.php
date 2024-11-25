@@ -20,10 +20,9 @@ class DatabaseAccessObjectProductos
             $query = $conn->prepare("SELECT * FROM bbdd.productos ORDER BY {$order} DESC");
             $query->execute();
             $result = $query->get_result();
-    
             // Convertir cada fila en un objeto Shirt
             while ($producto = $result->fetch_assoc()) {
-                $fila = new Comida($producto["id"], $producto["nombre"], $producto["descripcion"], $producto["precio"],$producto["imagen"],);
+                $fila = new Comida($producto["id_producto"], $producto["nombre"], $producto["descripcion"], $producto["ingredientes"], $producto["precio"], $producto["imagen"], $producto["tipo"]);
                 $productos[] = $fila;
             }
         } catch (Exception $e) {
