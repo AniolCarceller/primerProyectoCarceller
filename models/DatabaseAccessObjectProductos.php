@@ -26,12 +26,28 @@ class DatabaseAccessObjectProductos
                 $productos[] = $fila;
             }
         } catch (Exception $e) {
-            echo "Error al obtener camisetas: " . $e->getMessage();
+            echo "Error: " . $e->getMessage();
         }
-    
         return $productos;
     }
+    public function insertProductos($userid, $ubicacion, $codigo_descuento, $precio){
     
+        try {
+            $db = new dataBase;
+            $conn = $db->conn;
+            $query = $conn->prepare("INSERT INTO bbdd.pedidos(user_id, ubicacion, codigo_descuento, precio) VALUES('$userid', '$ubicacion', '$codigo_descuento', '$precio')");
+            $query->execute();
+            // Consulta SQL
+            $pedidoid = $conn->insert_id;
+            foreach ($_SESSION['carrito'] as $productoId => $producto){
+                $query = $conn->prepare("INSERT INTO bbdd.pedidos_productos(pedido_id, user_id, producto_id, cantidad) VALUES('$pedidoid','$userid', '{$producto['id']}', '{$producto['cantidad']}')");
+                $query->execute();
+                $result = $query->get_result();
+            }
+        } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
 }
 
 ?>

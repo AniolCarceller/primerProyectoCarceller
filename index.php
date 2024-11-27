@@ -1,7 +1,11 @@
 <?php
 include_once "controllers/productoController.php";
 include_once "config/parameters.php";
-include("views/header.php");
+if(isset($_GET['controller']) && isset($_GET['action'])){
+    if($_GET['action']!="iniciarsession"){
+        include("views/header.php");
+    }
+}
 //Importa el menu i el estilo
 
 if (!isset($_GET['controller'])) {
@@ -27,6 +31,10 @@ if (!isset($_GET['controller'])) {
         header("Location: " . url . "producto/index");
     }
 }
+if(isset($_GET['controller']) && isset($_GET['action'])){
+    if($_GET['action']!="iniciarsession"){
 include("views/footer.php");
+    }
+}
 
 ?>
