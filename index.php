@@ -2,8 +2,13 @@
 include_once "controllers/productoController.php";
 include_once "config/parameters.php";
 if(isset($_GET['controller']) && isset($_GET['action'])){
-    if($_GET['action']!="iniciarsession"){
-        include("views/header.php");
+    if($_GET['action']!="iniciarsession" || $_GET['action']!="registro"){
+        if (!isset($_SESSION['usuario_id'])) {
+            include("views/header.php");
+        }
+        else{
+            include("views/headerLogin.php");
+        }
     }
 }
 //Importa el menu i el estilo

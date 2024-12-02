@@ -1,5 +1,5 @@
 <?php
-include_once("config/carrito.php")
+include_once("config/carrito.php");
 ?>
 <ul>
     <?php 

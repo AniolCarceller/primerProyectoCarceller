@@ -1,5 +1,7 @@
 <?php
+session_start();
 include_once("models/DatabaseAccessObjectProductos.php");
+include_once("models/DatabaseAccessObjectUsuarios.php");
 class productoController {
     public function index(){
         $dao = new DatabaseAccessObjectProductos();
@@ -17,9 +19,12 @@ class productoController {
         include "views/pedir.php";
     }
     public function iniciarsession(){
-        $dao = new DatabaseAccessObjectProductos();
-        $productos = $dao->getAllProductos("nombre");
+        $dao = new DatabaseAccessObjectUsuarios();
         include "views/iniciarsession.php";
+    }
+    public function registro(){
+        $dao = new DatabaseAccessObjectUsuarios();
+        include "views/registro.php";
     }
 }
 ?>
