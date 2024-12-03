@@ -18,13 +18,22 @@ class productoController {
         $productos = $dao->getAllProductos("nombre");
         include "views/pedir.php";
     }
-    public function iniciarsession(){
+    public function iniciarsesion(){
         $dao = new DatabaseAccessObjectUsuarios();
-        include "views/iniciarsession.php";
+        include "views/iniciarsesion.php";
+    }
+    public function cerrarsesion(){
+        $dao = new DatabaseAccessObjectUsuarios();
+        include "views/cerrarsesion.php";
     }
     public function registro(){
         $dao = new DatabaseAccessObjectUsuarios();
         include "views/registro.php";
+    }
+    public function cuenta(){
+        $daoPedido = new DatabaseAccessObjectProductos();
+        $dao = new DatabaseAccessObjectUsuarios();
+        include "views/cuenta.php";
     }
 }
 ?>

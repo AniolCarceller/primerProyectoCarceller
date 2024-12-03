@@ -1,6 +1,4 @@
 <?php
-session_start(); // Iniciar sesión
-
 if (isset($_POST['correo']) && isset($_POST['contraseña'])) {
     $correo = $_POST['correo'];
     $contraseña = $_POST['contraseña'];
@@ -20,8 +18,10 @@ if (isset($_POST['correo']) && isset($_POST['contraseña'])) {
 
         if ($usuarioEncontrado) {
             if (password_verify($contraseña, $usuarioEncontrado['contraseña'])) {
+                session_start(); 
                 $_SESSION['usuario_id'] = $usuarioEncontrado['user_id'];
                 $_SESSION['nombre'] = $usuarioEncontrado['nombre_apellidos'];
+                $_SESSION['correo'] = $usuarioEncontrado['correo'];
                 header("Location: " . url . "producto/index");
                 exit;
             } else {

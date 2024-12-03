@@ -1,13 +1,16 @@
 <?php
 include_once "controllers/productoController.php";
 include_once "config/parameters.php";
-if(isset($_GET['controller']) && isset($_GET['action'])){
-    if($_GET['action']!="iniciarsession" || $_GET['action']!="registro"){
-        if (!isset($_SESSION['usuario_id'])) {
-            include("views/header.php");
-        }
-        else{
+if (isset($_GET['controller']) && isset($_GET['action'])) {
+    // Condición para acciones que no sean iniciar sesión o registro
+    if ($_GET['action'] != "iniciarsesion" && $_GET['action'] != "registro") {
+        // Verifica si la sesión está activa
+        if (isset($_SESSION['usuario_id'])) {
             include("views/headerLogin.php");
+            // Usuario autenticado: carga el encabezado estándar
+        } else {
+            // Usuario no autenticado: carga el encabezado para login
+            include("views/header.php");
         }
     }
 }
@@ -36,10 +39,8 @@ if (!isset($_GET['controller'])) {
         header("Location: " . url . "producto/index");
     }
 }
-if(isset($_GET['controller']) && isset($_GET['action'])){
-    if($_GET['action']!="iniciarsession"){
-include("views/footer.php");
-    }
+if ($_GET['action'] != "iniciarsesion" && $_GET['action'] != "registro") {
+    include("views/footer.php");
 }
 
 ?>
