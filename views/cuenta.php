@@ -31,5 +31,4 @@ if (isset($_POST['nombre']) && isset($_POST['correo'])) {
 </form>
 <p>Pedidos:</p>
 <?php
-$daoProductos->mostrarPedidos($_SESSION['usuario_id']);
 ?>

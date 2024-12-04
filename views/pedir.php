@@ -8,6 +8,9 @@ if(isset($_POST['ubicacion']) && isset($_POST['precio'])){
     else $codigo_descuento=0;
     $precio = $_POST['precio'];
     $productosInsert = $dao->insertProductos(1, $ubicacion, $codigo_descuento, $precio);
+    //añadir session unset de UNICAMENTE CARRITO
+    unset($_SESSION['carrito']);
+    header("location: ". url);
 }
 else{
     echo("Pon la ubicacion");

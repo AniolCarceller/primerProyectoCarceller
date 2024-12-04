@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 if (isset($_GET['id'])) {
     $productoId = $_GET['id'];
     if (!isset($_SESSION['carrito'])) {

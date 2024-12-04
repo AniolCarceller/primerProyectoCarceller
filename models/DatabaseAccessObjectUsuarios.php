@@ -1,10 +1,4 @@
 <?php
-
-/*
- * Progreso del viernes, creamos un patron de programacion llamado DAO (DatabaseAccessObject) el cual
- * centraliza todas las operaciones de la base de datos, todas las salidas de las funciones devuelven valores
- * nunca tiene que devolver un objeto tipo mysqli para evitar problemas.
- */
 include_once("config/dataBase.php");
 class DatabaseAccessObjectUsuarios
 {
@@ -13,8 +7,6 @@ class DatabaseAccessObjectUsuarios
         try {
             $db = new dataBase;
             $conn = $db->conn;
-    
-            // Consulta SQL
             $query = $conn->prepare("SELECT * FROM bbdd.users");
             $query->execute();
             $result = $query->get_result();

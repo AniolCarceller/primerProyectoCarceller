@@ -1,7 +1,5 @@
 <?php
 include_once("models/DatabaseAccessObjectProductos.php");
-
-// Incluir las clases de productos que vayas a manejar (en este caso, 'Product' y 'Comida')
 include_once("models/Productos/Comida.php");
 ?>
 <body>
@@ -20,22 +18,18 @@ include_once("models/Productos/Comida.php");
         <div class="row">
             <!-- Limitar a los primeros 5 productos -->
             <?php
-                $cont=0;
+                $dao = new DatabaseAccessObjectProductos();
+                $productos = $dao->getAllProductos("pizza");
+                $productosLimitados = array_slice($productos, 0, 5);
                 foreach ($productos as $producto){
                     if($producto->getTipo()=="pizza"){
             ?>
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="producto">
-                        <!-- Imagen del producto -->
                         <img src="<?php echo $producto->GetImagen(); ?>" alt="" class="img-fluid">
-                        
-                        <!-- Nombre del producto -->
                         <h3><?php echo $producto->GetNombre(); ?></h3>
-                        
-                        <!-- Descripción del producto -->
                         <p><?php echo $producto->GetDescripcion(); ?></p>
                     </div>
-                    <?$cont++?>
                 </div>
             <?php }} ?>
         </div>
@@ -47,22 +41,17 @@ include_once("models/Productos/Comida.php");
         <div class="row">
             <!-- Limitar a los primeros 5 productos -->
             <?php
-                $cont=0;
+                $productos = $dao->getAllProductos("racion");
+                $productosLimitados = array_slice($productos, 0, 5);
                 foreach ($productos as $producto){
                     if($producto->getTipo()=="racion"){
             ?>
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="producto">
-                        <!-- Imagen del producto -->
                         <img src="<?php echo $producto->GetImagen(); ?>" alt="" class="img-fluid">
-                        
-                        <!-- Nombre del producto -->
                         <h3><?php echo $producto->GetNombre(); ?></h3>
-                        
-                        <!-- Descripción del producto -->
                         <p><?php echo $producto->GetDescripcion(); ?></p>
                     </div>
-                    <?$cont++?>
                 </div>
             <?php }} ?>
         </div>
