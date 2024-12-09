@@ -8,11 +8,13 @@ class DatabaseAccessObjectProductos
         try {
             $db = new dataBase;
             $conn = $db->conn;
-            $query = $conn->prepare("SELECT * FROM bbdd.productos WHERE tipo='$producto'");
+            $query;
+            if($producto!="") $query = $conn->prepare("SELECT * FROM bbdd.productos WHERE tipo='$producto'");
+            else $query = $conn->prepare("SELECT * FROM bbdd.productos");
             $query->execute();
             $result = $query->get_result();
             while ($producto = $result->fetch_assoc()) {
-                $fila = new Comida($producto["id_producto"], $producto["nombre"], $producto["descripcion"], $producto["ingredientes"], $producto["precio"], $producto["imagen"], $producto["tipo"]);
+                $fila = new Comida($producto["id_producto"], $producto["nombre"], $producto["descripcion"], $producto["ingredientes"], $producto["precio"], $producto["imagen"], $producto["tipo"], $producto["oferta"], $producto["fecha_final"]);
                 $productos[] = $fila;
             }
         } catch (Exception $e) {
@@ -45,7 +47,7 @@ class DatabaseAccessObjectProductos
             $query->execute();
             $result = $query->get_result();
             while ($producto = $result->fetch_assoc()) {
-                $fila = new Comida($producto["id_producto"], $producto["nombre"], $producto["descripcion"], $producto["ingredientes"], $producto["precio"], $producto["imagen"], $producto["tipo"]);
+                $fila = new Comida($producto["id_producto"], $producto["nombre"], $producto["descripcion"], $producto["ingredientes"], $producto["precio"], $producto["imagen"], $producto["tipo"], $producto["oferta"], $producto["fecha_final"]);
                 $productos[] = $fila;
             }
         } catch (Exception $e) {

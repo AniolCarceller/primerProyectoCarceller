@@ -27,7 +27,12 @@ foreach ($productos as $producto) { ?>
             <div>
                 <h3><?php echo $producto->GetNombre(); ?></h3>
                 <p><?php echo $producto->GetDescripcion(); ?></p>
-                <p><?php echo $producto->GetPrecio(); ?></p>
+                <?php if($producto->GetOferta() && $producto->GetFechaFinal()>=date('Y-m-d')){ ?>
+                    <p><?php echo ($producto->GetPrecio()*(1-$producto->GetOferta()/100)); ?></p>
+                    <p><?php echo $producto->GetPrecio(); ?></p>           
+                <?php } else{?>
+                    <p><?php echo $producto->GetPrecio(); ?></p>
+                <?php } ?>
                 <a href="?controller=producto&action=carta&id=<?= $producto->GetId() ?>">
                     <img class="icono" src="img/añadir.svg" alt="">
                 </a>

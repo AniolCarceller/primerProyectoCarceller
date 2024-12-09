@@ -8,6 +8,9 @@ abstract class Product
     protected $ingredientes;
     protected $precio;
     protected $imagen;
+    protected $tipo;
+    protected $oferta;
+    protected $fecha_final;
     
     /*
     // Para poder usar fetch_object hay que vaciar el construct
@@ -19,7 +22,7 @@ abstract class Product
     }
     */
 
-    public function __construct($id, $nombre, $descripcion, $ingredientes, $precio, $imagen, $tipo)
+    public function __construct($id, $nombre, $descripcion, $ingredientes, $precio, $imagen, $tipo, $oferta, $fecha_final)
     {
         $this->id = $id;
         $this->nombre = $nombre;
@@ -28,6 +31,8 @@ abstract class Product
         $this->precio = $precio;
         $this->imagen = $imagen;
         $this->tipo = $tipo;
+        $this->oferta = $oferta;
+        $this->fecha_final = $fecha_final;
 
     }
     public function GetId()
@@ -62,6 +67,14 @@ abstract class Product
     {
         return $this->tipo;
     }
+    public function GetOferta()
+    {
+        return $this->oferta;
+    }
+    public function GetFechaFinal()
+    {
+        return $this->fecha_final;
+    }
 
     public function SetId($value)
     {
@@ -95,6 +108,14 @@ abstract class Product
     public function SetTipo($value)
     {
         $this->tipo = $value;
+    }
+    public function SetOferta($value)
+    {
+        $this->oferta = $value;
+    }
+    public function SetFechaFinal($value)
+    {
+        $this->fecha_final = $value;
     }
 }
 

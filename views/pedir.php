@@ -29,8 +29,16 @@ else{
                     Precio: <?php 
                     foreach ($productos as $productoBD) {
                         if($productoBD->getId()==$producto['id']){
-                            echo($productoBD->getPrecio()*$producto['cantidad']);
-                            $total+=$productoBD->getPrecio()*$producto['cantidad'];               
+                            if($productoBD->GetOferta() && $productoBD->GetFechaFinal()>=date('Y-m-d')){ ?>
+                                <p><?php echo ($productoBD->GetPrecio()*(1-$productoBD->GetOferta()/100)); ?></p>
+                                <p><?php echo $productoBD->GetPrecio(); ?></p>           
+                            <?php 
+                            $total+=$productoBD->GetPrecio()*(1-$productoBD->GetOferta()/100)*$producto['cantidad']; 
+                            } else{?>
+                                <p><?php echo $productoBD->GetPrecio(); ?></p>
+                            <?php 
+                                $total+=$productoBD->getPrecio()*$producto['cantidad'];               
+                            }
                         }
                     }?>
                 </li>
