@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include_once("models/DatabaseAccessObjectProductos.php");
 include_once("models/DatabaseAccessObjectUsuarios.php");
 class productoController {
@@ -32,6 +33,13 @@ class productoController {
         $daoPedido = new DatabaseAccessObjectProductos();
         $dao = new DatabaseAccessObjectUsuarios();
         include "views/cuenta.php";
+    }
+    public function apiView(){
+        include "views/apiView.php";
+    }
+    public function panelAdministracionUsers(){
+        include "views/menu.php";
+        include "views/panelAdministracionUsers.php";
     }
 }
 ?>

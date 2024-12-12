@@ -211,3 +211,8 @@ footer {
 #linkFormulario{
     width: 100%;
 }
+#menuApi{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}

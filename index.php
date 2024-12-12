@@ -9,6 +9,7 @@
 </head>
 <?php
 include_once "controllers/productoController.php";
+include_once "controllers/apiController.php";
 include_once "config/parameters.php";
 if (isset($_GET['controller']) && isset($_GET['action'])) {
     // Condición para acciones que no sean iniciar sesión o registro
