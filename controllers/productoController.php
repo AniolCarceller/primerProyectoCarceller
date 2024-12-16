@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 include_once("models/DatabaseAccessObjectProductos.php");
 include_once("models/DatabaseAccessObjectUsuarios.php");
@@ -9,7 +11,6 @@ class productoController {
     }
     public function carta(){
         $dao = new DatabaseAccessObjectProductos();
-        $productos = $dao->getAllProductos("");
         include "views/carta.php";
     }
     public function pedir(){

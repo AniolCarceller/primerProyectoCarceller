@@ -55,6 +55,25 @@ class DatabaseAccessObjectProductos
         }
         return $productos;
     }
-}
+    public function getAllTipos(){
+        $tipos = [];
+        try {
+            $db = new dataBase;
+            $conn = $db->conn;
+            
+            // Consulta para obtener tipos únicos de productos
+            $query = $conn->prepare("SELECT DISTINCT tipo FROM bbdd.productos");
+            $query->execute();
+            $result = $query->get_result();
 
+            // Recorre el resultado y almacena los tipos en el arreglo
+            while ($row = $result->fetch_assoc()) {
+                $tipos[] = $row['tipo'];
+            }
+        } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();
+        }
+        return $tipos;
+    }
+}
 ?>

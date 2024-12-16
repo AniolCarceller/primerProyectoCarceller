@@ -176,9 +176,6 @@ footer {
     width: 24px;
     height: 24px;
 }
-.icono{
-    width: 50px !important;
-}
 /*************/
 /****LOGIN****/
 /*************/
@@ -215,4 +212,14 @@ footer {
     display: flex;
     flex-direction: column;
     text-decoration: none;
+}
+/***********/
+/***CARTA***/
+/***********/
+.tipos{
+    width: 25%;
+    height: 100%;
+}
+.icono{
+    width: 50px !important;
 }
