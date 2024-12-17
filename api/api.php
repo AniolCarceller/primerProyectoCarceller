@@ -1,5 +1,6 @@
 <?php
-include_once("config/dataBase.php");
+include_once("C:/xampp/htdocs\DAW2/primerProyectoCarceller/config/parameters.php");
+include_once(url."/dataBase.php");
 include_once("endpoints/usuarios.php");
 include_once("endpoints/pedidos.php");
 header('Content-Type: application/json');
