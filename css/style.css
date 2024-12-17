@@ -217,9 +217,22 @@ footer {
 /***CARTA***/
 /***********/
 .tipos{
-    width: 25%;
+    width: 35%;
     height: 100%;
 }
 .icono{
     width: 50px !important;
+}
+.columnas{
+    border: solid 1px black;
+}
+.articuloCarta{
+    padding: 20px;
+}
+.articuloCarta img{
+    background-color: var(--backgroundproduct);
+    border-radius: 20px;
+}
+.bodyCarta{
+    padding: 0% 7.5% 0% 7.5%;
 }

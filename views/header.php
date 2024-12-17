@@ -10,7 +10,7 @@
 <body>
     <header>
         <div id="header">
-            <img src="/img/logo.png" alt="">
+            <img src="/img/logo.webp" alt="">
             <input type="text" name="hola" id="">
             <a href="">Regístrate o inicia sesíon</a>
             <a href="">Pedir</a> 
