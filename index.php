@@ -27,7 +27,7 @@ if (isset($_GET['controller']) && isset($_GET['action'])) {
 //Importa el menu i el estilo
 
 if (!isset($_GET['controller'])) {
-    //header("Location: " . url . "?controller=producto&action=index");
+    header("Location: ?controller=producto&action=index");
 } else {
     //Establece el nombre del controlador
     $nombre_controller = $_GET["controller"]."Controller";
@@ -46,7 +46,7 @@ if (!isset($_GET['controller'])) {
         //ejecuta action en el controlador
         $controller -> $action();
     } else {
-        //header("Location: " . url . "?controller=producto&action=index");
+        header("Location: ?controller=producto&action=index");
     }
 }
 if ($_GET['action'] != "iniciarsesion" && $_GET['action'] != "registro") {

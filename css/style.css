@@ -2,6 +2,8 @@
     --background: #85FFD3;
     --backgroundproduct: #ECEFF1;
     --backgroundLoginRegister: #29363dcc;
+    --textoEnlaces: #29363d;
+    --borderBottomHeader: #d1dbe0;
 }
 @font-face {
   font-family: 'Wallie Skinny';
@@ -33,10 +35,12 @@
     font-family: 'Wallie Fit', sans-serif;
 }
 header{
-    width: auto;
+    width: 100%;
+    border-bottom: solid 1px var(--borderBottomHeader);
+    position: fixed;
+    background-color: #ffffff;
 }
 #header {
-    border: 1px black solid;
     display: flex;
     align-items: center;
     padding: 0x 32px 0 32px;
@@ -50,11 +54,11 @@ header{
     border-radius: 20px;
 }
 #header a {
-    padding: 0px 0px 0px 24px;
+    text-decoration: none;
+    color: var(--textoEnlaces);
 }
 #menu{
     width: 30%;
-    border: 1px black solid;
     height: 5vh;
     display: flex;
     justify-content: space-around;
@@ -64,6 +68,20 @@ header{
 #menu a{
     text-decoration: none;
     color: black;
+}
+.dropdown-toggle {
+    border: none;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* Quitar la flecha hacia abajo del dropdown */
+.dropdown-toggle::after {
+    display: none;
+}
+.dropdown-menu{
+    background-color: white;
 }
 #banner{
     margin: 0px 7vw 0px 7vw;
@@ -221,7 +239,7 @@ footer {
     height: 100%;
 }
 .icono{
-    width: 50px !important;
+    width: 25px !important;
 }
 .columnas{
     border: solid 1px black;
