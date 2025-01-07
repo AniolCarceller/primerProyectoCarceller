@@ -2,7 +2,7 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-
+//Controller que redirige a todas las paginas
 include_once("models/DatabaseAccessObjectProductos.php");
 include_once("models/DatabaseAccessObjectUsuarios.php");
 class productoController {
@@ -19,15 +19,14 @@ class productoController {
         include "views/pedir.php";
     }
     public function iniciarsesion(){
-        $dao = new DatabaseAccessObjectUsuarios();
+        $daoUsers = new DatabaseAccessObjectUsuarios();
         include "views/iniciarsesion.php";
     }
     public function cerrarsesion(){
-        $dao = new DatabaseAccessObjectUsuarios();
         include "views/cerrarsesion.php";
     }
     public function registro(){
-        $dao = new DatabaseAccessObjectUsuarios();
+        $daoUsers = new DatabaseAccessObjectUsuarios();
         include "views/registro.php";
     }
     public function cuenta(){
@@ -41,6 +40,10 @@ class productoController {
     public function panelAdministracionUsers(){
         include "views/menu.php";
         include "views/panelAdministracionUsers.php";
+    }
+    public function error404(){
+        include "views/menu.php";
+        include "views/error404.php";
     }
 }
 ?>

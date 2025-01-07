@@ -1,4 +1,5 @@
 <?php
+//Permite hacer CRUD con los productos
 include_once("Productos/Comida.php");
 include_once("config/dataBase.php");
 class DatabaseAccessObjectProductos
@@ -8,7 +9,6 @@ class DatabaseAccessObjectProductos
         try {
             $db = new dataBase;
             $conn = $db->conn;
-            $query;
             if($producto!="") $query = $conn->prepare("SELECT * FROM bbdd.productos WHERE tipo='$producto'");
             else $query = $conn->prepare("SELECT * FROM bbdd.productos");
             $query->execute();
@@ -22,11 +22,11 @@ class DatabaseAccessObjectProductos
         }
         return $productos;
     }
-    public function insertProductos($userid, $ubicacion, $codigo_descuento, $precio){
+    public function insertProductos($userid, $ubicacion, $precio){
         try {
             $db = new dataBase;
             $conn = $db->conn;
-            $query = $conn->prepare("INSERT INTO bbdd.pedidos(user_id, ubicacion, codigo_descuento, precio) VALUES('$userid', '$ubicacion', '$codigo_descuento', '$precio')");
+            $query = $conn->prepare("INSERT INTO bbdd.pedidos(user_id, ubicacion, precio) VALUES('$userid', '$ubicacion', '$precio')");
             $query->execute();
             $pedidoid = $conn->insert_id;
             foreach ($_SESSION['carrito'] as $productoId => $producto){
@@ -61,12 +61,10 @@ class DatabaseAccessObjectProductos
             $db = new dataBase;
             $conn = $db->conn;
             
-            // Consulta para obtener tipos únicos de productos
             $query = $conn->prepare("SELECT DISTINCT tipo FROM bbdd.productos");
             $query->execute();
             $result = $query->get_result();
 
-            // Recorre el resultado y almacena los tipos en el arreglo
             while ($row = $result->fetch_assoc()) {
                 $tipos[] = $row['tipo'];
             }

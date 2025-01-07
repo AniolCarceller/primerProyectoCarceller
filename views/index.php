@@ -1,75 +1,108 @@
 <?php
+//Muestra la pagina principal con un banner y 3 secciones de productos
 include_once("models/DatabaseAccessObjectProductos.php");
 include_once("models/Productos/Comida.php");
 ?>
-<body>
     <article id="bannerColor">
         <div id="banner">
-            <div id="bannerLinkCarta">
-                <h1><strong>Prueba</strong> nuestras mejores pizzas</h1>
-                <a href="">Nuestra carta</a>
-            </div>
-            <img src="/img/imagenbanner.png" alt="" class="img-fluid">
-        </div>
-    </article>
-    <h1>Pizzas</h1>
-    <div class="d-flex justify-content-center">
-    <article class="productosInicio container d-flex justify-content-center">
-        <div class="row">
-            <!-- Limitar a los primeros 5 productos -->
-            <?php
-                $dao = new DatabaseAccessObjectProductos();
-                $productos = $dao->getAllProductos("pizza");
-                $productosLimitados = array_slice($productos, 0, 5);
-                foreach ($productos as $producto){
-                    if($producto->getTipo()=="pizza"){
-            ?>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="producto">
-                        <img src="<?php echo $producto->GetImagen(); ?>" alt="" class="img-fluid">
-                        <h3><?php echo $producto->GetNombre(); ?></h3>
-                        <p><?php echo $producto->GetDescripcion(); ?></p>
+            <div>
+                <h1>Las <strong>Mejores Pizzas</strong> de España te esperan: </h1>
+                <div id="alignButton">
+                    <div class="botonFondo">
+                        <a href="http://primerproyectocarceller.com/?controller=producto&action=carta" class="boton">Nuestra carta</a>
                     </div>
                 </div>
-            <?php }} ?>
+            </div>
+            <img src="/img/imagenbanner.png" alt="" class="img-fluid d-none d-xxl-block">
         </div>
     </article>
-    </div>
-    <h1>Raciones</h1>
+
     <div class="d-flex justify-content-center">
-    <article class="productosInicio container d-flex justify-content-center">
-        <div class="row">
-            <!-- Limitar a los primeros 5 productos -->
-            <?php
-                $productos = $dao->getAllProductos("racion");
-                $productosLimitados = array_slice($productos, 0, 5);
-                foreach ($productos as $producto){
-                    if($producto->getTipo()=="racion"){
-            ?>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="producto">
-                        <img src="<?php echo $producto->GetImagen(); ?>" alt="" class="img-fluid">
-                        <h3><?php echo $producto->GetNombre(); ?></h3>
-                        <p><?php echo $producto->GetDescripcion(); ?></p>
+        <div class="productosContainer">
+            <h1 class="titulo">Pizzas</h1>
+            <article class="productosInicio container d-grid gap-4">
+                <div class="row g-4">
+                    <?php
+                        $dao = new DatabaseAccessObjectProductos();
+                        $productos = $dao->getAllProductos("pizza");
+                        $productosLimitados = array_slice($productos, 0, 5);
+                        foreach ($productos as $producto){
+                    ?>
+                    <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 d-flex justify-content-center">
+                        <a href="?controller=producto&action=carta">
+                            <div class="producto">
+                                <div class="imagenAlturaFondo">
+                                    <img src="<?php echo $producto->GetImagen(); ?>" alt="" class="imagenProducto">
+                                </div>
+                                <div class="textoProducto">
+                                    <h3><?php echo $producto->GetNombre(); ?></h3>
+                                    <p><?php echo $producto->GetDescripcion(); ?></p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
+                    <?php } ?>
                 </div>
-            <?php }} ?>
+            </article>
         </div>
-    </article>
     </div>
-    <article id="">
-        <div>
-            <img src="" alt="">
-            <div>
-                <h2>Encontrar la carta</h2>
-                <p>Accede a la carta mediante el header o mediante este enlace</p>
-                <a href="">Nuestra carta</a>
-            </div>
-            <div>
-                <h2>Pagos 100% seguros</h2>
-            </div>
+    <div class="d-flex justify-content-center">
+        <div class="productosContainer">
+            <h1 class="titulo">Raciones</h1>
+            <article class="productosInicio container d-grid gap-4">
+                <div class="row g-4">
+                    <?php
+                        $dao = new DatabaseAccessObjectProductos();
+                        $productos = $dao->getAllProductos("racion");
+                        $productosLimitados = array_slice($productos, 0, 5);
+                        foreach ($productos as $producto){
+                    ?>
+                    <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 d-flex justify-content-center">
+                        <a href="?controller=producto&action=carta">
+                            <div class="producto">
+                                <div class="imagenAlturaFondo">
+                                    <img src="<?php echo $producto->GetImagen(); ?>" alt="" class="imagenProducto">
+                                </div>
+                                <div class="textoProducto">
+                                    <h3><?php echo $producto->GetNombre(); ?></h3>
+                                    <p><?php echo $producto->GetDescripcion(); ?></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                        
+                    <?php } ?>
+                </div>
+            </article>
         </div>
-    </article>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="productosContainer">
+            <h1 class="titulo">Bebidas</h1>
+            <article class="productosInicio container d-grid gap-4">
+                <div class="row g-4">
+                    <?php
+                        $dao = new DatabaseAccessObjectProductos();
+                        $productos = $dao->getAllProductos("bebida");
+                        $productosLimitados = array_slice($productos, 0, 5);
+                        foreach ($productos as $producto){
+                    ?>
+                    <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 d-flex justify-content-center">
+                        <div class="producto">
+                            <div class="imagenAlturaFondo">
+                                <img src="<?php echo $producto->GetImagen(); ?>" alt="" class="imagenProducto">
+                            </div>
+                            <div class="textoProducto">
+                                <h3><?php echo $producto->GetNombre(); ?></h3>
+                                <p><?php echo $producto->GetDescripcion(); ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                    <?php } ?>
+                </div>
+            </article>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,10 +1,7 @@
 
 <?php
+//pagina de cuenta
 if (isset($_POST['nombre']) && isset($_POST['correo'])) {
-    /*if (!filter_var($_POST['correo'], FILTER_VALIDATE_EMAIL)) {
-        throw new Exception("Correo inválido");
-    }
-    else{*/
     $nombre= $_POST['nombre'];
     $correo = $_POST['correo'];
     $contraseña = $_POST['contraseña'];
@@ -17,7 +14,6 @@ if (isset($_POST['nombre']) && isset($_POST['correo'])) {
     $usuariosUpdate = $dao->updateUsers($_SESSION['usuario_id'], $nombre, $correo, $contraseñaEncriptada);;
     $_SESSION['nombre'] = $nombre;
     $_SESSION['correo'] = $correo;
-    //}
 }
 ?>
 <form method="POST">

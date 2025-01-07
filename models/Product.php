@@ -12,15 +12,6 @@ abstract class Product
     protected $oferta;
     protected $fecha_final;
     
-    /*
-    // Para poder usar fetch_object hay que vaciar el construct
-    public function __construct($nombre, $precio, $talla)
-    {
-        $this->nombre = $nombre;
-        $this->precio = $precio;
-        $this->talla = $talla;
-    }
-    */
 
     public function __construct($id, $nombre, $descripcion, $ingredientes, $precio, $imagen, $tipo, $oferta, $fecha_final)
     {

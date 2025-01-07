@@ -1,203 +1,235 @@
 :root{
-    --background: #85FFD3;
-    --backgroundproduct: #ECEFF1;
+    --colorFondoBoton: #015556;
+    --colorTextoBoton: #FFFFFF;
+    --colorFondoBotonHover: #1C776F;
+    --colorTextoBotonHover: #E7FFF6;
+    --colorFondoBotonOnClick: #369988;
+    --colorTextoBotonOnClick: #CEFFED;
+
+    --colorTextoBanner: #015354;
+    --borderBottomHeader: #d1dbe0;
+    --backgroundProductos: #ECEFF1;
     --backgroundLoginRegister: #29363dcc;
     --textoEnlaces: #29363d;
-    --borderBottomHeader: #d1dbe0;
-}
-@font-face {
-  font-family: 'Wallie Skinny';
-  src: url('fonts/Wallie-Skinny.woff2') format('woff2'),
-       url('fonts/Wallie-Skinny.woff') format('woff'),
-       url('fonts/Wallie-Skinny.ttf') format('truetype');
-  font-weight: 300;
-  font-display: fallback;
+    --backgroundBanner: #85FFD3;
+
+    --colorTituloCategoriaProducto: #212529;
+    --colorTituloProducto: #253238;
+    --colorDescripcionProducto: #607d8b;
+
+    --colorFondoPedido: #E6EAEC;
+    --textoEnlaceLogin: #038673;
+
+    --colorBordeRegistro: #3dd2ba;
+    --colorBordeRegistroHover: #3dd2baE6;
+    --colorBordeRegistroOnClick: #3dd2baCC;
 }
 
 @font-face {
-  font-family: 'Wallie Fit';
-  src: url('fonts/Wallie-Fit.woff2') format('woff2'),
-       url('fonts/Wallie-Fit.woff') format('woff'),
-       url('fonts/Wallie-Fit.ttf') format('truetype');
-  font-display: fallback;
+    font-family: 'WallieFit';
+    src: url('/fonts/Wallie-Fit.woff') format('woff');
+    font-display: fallback;
 }
 
 @font-face {
-  font-family: 'Wallie Chunky';
-  src: url('fonts/Wallie-Chunky.woff2') format('woff2'),
-       url('fonts/Wallie-Chunky.woff') format('woff'),
-       url('fonts/Wallie-Chunky.ttf') format('truetype');
-  font-weight: 700;
-  font-display: fallback;
+    font-family: 'WallieChunky';
+    src: url('/fonts/Wallie-Chunky.woff') format('woff');
+    font-weight: 700;
+    font-display: fallback;
 }
-* {
+
+@font-face {
+    font-family: 'WallieSkinny';
+    src: url('/fonts/Wallie-Skinny.woff') format('woff');
+    font-weight: 300;
+    font-display: fallback;
+}
+
+div, article {
     margin: 0 auto;
-    font-family: 'Wallie Fit', sans-serif;
+    font-family: 'WallieFit', sans-serif;
 }
+/*HEADER*/
+.fondoBotonIrRegistro {
+    border: var(--colorBordeRegistro) 2px solid;
+    width: 220px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+}
+
+.fondoBotonIrRegistro:hover {
+    border: var(--colorBordeRegistroHover) 2px solid;
+}
+
+.fondoBotonIrRegistro:active {
+    border: var(--colorBordeRegistroOnClick) 2px solid;
+}
+
+.botonIrRegistro {
+    text-decoration: none;
+    color: var(--colorTituloProducto);
+    font-size: 1rem;
+    font-family: "WallieChunky";
+}
+
 header{
     width: 100%;
     border-bottom: solid 1px var(--borderBottomHeader);
-    position: fixed;
     background-color: #ffffff;
 }
 #header {
     display: flex;
+    width: 100%;
     align-items: center;
-    padding: 0x 32px 0 32px;
+    justify-content: space-between;
+    border-bottom: solid 1px var(--borderBottomHeader);
+    padding: 0px 32px;
     height: 10vh;
+}
 
-
-}
-#header input{
-    width: 60%;
-    height: 30px;
-    border-radius: 20px;
-}
-#header a {
-    text-decoration: none;
-    color: var(--textoEnlaces);
-}
-#menu{
-    width: 30%;
-    height: 5vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-left: 10vh;
-}
-#menu a{
-    text-decoration: none;
-    color: black;
-}
 .dropdown-toggle {
     border: none;
     background: none;
     padding: 0;
     box-shadow: none;
 }
-
-/* Quitar la flecha hacia abajo del dropdown */
 .dropdown-toggle::after {
     display: none;
 }
 .dropdown-menu{
     background-color: white;
 }
-#banner{
-    margin: 0px 7vw 0px 7vw;
-    display: grid;
-    grid-template-columns: 8fr 19fr;
+#menu{
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+}
+/*PAGINA PRINCIPAL*/
+#alignButton {
+    padding-top: 125px;
+}
+
+.botonFondo {
+    background-color: var(--colorFondoBoton);
+    width: 123px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+}
+
+.botonFondo:hover {
+    background-color: var(--colorFondoBotonHover);
+}
+
+.botonFondo:active {
+    background-color: var(--colorFondoBotonOnClick);
+}
+
+.boton {
+    text-decoration: none;
+    color: var(--colorTextoBoton);
+    font-size: 1rem;
+    font-family: "WallieChunky";
+}
+
+.boton:hover {
+    color: var(--colorTextoBotonHover);
+}
+
+.boton:active {
+    color: var(--colorTextoBotonOnClick);
+}
+
+#bannerColor {
+    background-color: var(--backgroundBanner);
+    height: 384px;
+}
+
+#banner {
+    color: var(--colorTextoBanner);
+    display: flex;
+    height: 384px;
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 #banner h1{
-    text-decoration: none;
-    font-size: 40px;
+    padding-top: 20px;
 }
-#bannerColor{
-    background-color: var(--background);
+
+@media (max-width: 1399px) {
+    #banner {
+        align-items: center;
+    }
 }
-#bannerLinkCarta{
+@media (min-width: 1400px) {
+    #alignButton {
+        padding-right: 100%;    
+    }
+}
+
+
+
+.imagenAlturaFondo {
+    width: 250px;
+    height: 325px;
     display: flex;
-    align-self: center;
-    flex-direction: column;
-}
-#banner img{
-    opacity: 65%;
-    background-color: var(--background);
-}
-.productosInicio {
-    margin: 0px 7vw 0px 7vw;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background-color: var(--backgroundProductos);
+    border-radius: 24px;
 }
 
-.productosInicio h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #2a4d69;
-}
-
-.producto {
-    padding: 15px;
-}
-
-.producto img {
-    width: 214px;
-    margin-bottom: 10px;
-    background-color: var(--backgroundproduct);
-    border-radius: 25px;
+.imagenProducto {
+    width: 180px;
+    height: 180px;
 }
 
 .producto h3 {
-    font-size: 1.25rem;
-    margin: 10px 0;
+    color: var(--colorTituloProducto);
+    font-weight: 700;
+    font-family: "WallieChunky";
+    font-size: 1rem;
 }
 
 .producto p {
-    font-size: 0.9rem;
-    color: #666;
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--colorDescripcionProducto);
+}   
+.producto:hover{
+    transform: translateY(-2px);
+}   
+.titulo {
+    font-size: 2rem;
+    font-family: "WallieChunky";
+    color: var(--colorTituloCategoriaProducto);
+    margin: 32px 0 32px 0;
 }
-
-footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 20px;
-    gap: 20px;
-    align-items: start;
-}
-
-.footer-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.footer-section.logo img {
-    width: 120px;
-    margin-bottom: 10px;
-}
-
-.footer-section p {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.footer-section h4 {
-    font-size: 1.1rem;
-    color: #333;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section li {
-    margin-bottom: 5px;
-}
-
-.footer-section a {
+  
+  
+/*FOOTER*/
+footer a, footer p{
     text-decoration: none;
-    color: #666;
-    transition: color 0.3s;
+    color: var(--colorDescripcionProducto);
+    font-size: .75rem;
 }
-
-.footer-section a:hover {
-    color: #2a4d69;
+footer h4{
+    font-family: "WallieChunky";
+    text-decoration: none;
+    color: var(--colorTituloCategoriaProducto);
+    font-size: 1rem;
 }
-
-.footer-section.social a {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.footer-section.social img {
-    width: 24px;
-    height: 24px;
-}
-/*************/
-/****LOGIN****/
-/*************/
-
+/************************/
+/****LOGIN Y REGISTER****/
+/************************/
 #formularioLogin{
     width: 100vw;
     height: 100vh;
@@ -206,51 +238,163 @@ footer {
 #formularioLogin form{
     width: 100%;
 }
-#form{
-    width: 420px;
-    height: 522px;
+#formularioLogin input[type='text'],
+#formularioLogin input[type='email'],
+#formularioLogin input[type='password'] {
+    max-width: 356px;
+    height: 64px;
+    width: 100%;
+    border-radius: 8px;
+    color: var(--textoEnlaces);
+    border: 1px solid #dcdcdc;
+    margin-bottom: 15px;
+}
+#formularioLogin input[type='password'] {
+    margin-bottom: 80px;
 }
 #formularioLogin h1{
     font-size: 1.5rem;
-    line-height: 32px;
+    color: var(--textoEnlaces);
+    font-family: "WallieChunky";
+}
+#form{
+    width: 100%;
+    max-width: 420px;
+    height: 522px;
+    border-radius: 16px;
+}
+
+#linkFormulario{
+    width: 100%;
+}
+#linkRegistro {
+    color: var(--textoEnlaceLogin);
+    text-decoration: none;
+    font-family: "WallieChunky";
 }
 @media (max-width: 576px) {
     #form {
-        width: 100%;
+        width: 100vw;
         height: 90%;
     }
     #formularioLogin input{
         width: 90vw;
     }
 }
-#linkFormulario{
-    width: 100%;
-}
-#menuApi{
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-}
 /***********/
 /***CARTA***/
 /***********/
-.tipos{
-    width: 35%;
-    height: 100%;
+#containerCarta{
+    max-width: 875px;
+}
+
+.articuloCarta p{
+    color: var(--colorTituloProducto);
+    font-size: .875rem;
 }
 .icono{
     width: 25px !important;
 }
 .columnas{
-    border: solid 1px black;
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
-.articuloCarta{
-    padding: 20px;
+.columnas h2{
+    color: var(--colorTituloCategoriaProducto);
+    font-size: 1.5rem;
+    font-family: "WallieChunky";
 }
+.columnasIzquierda a{
+    color: var(--colorTituloCategoriaProducto);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
 .articuloCarta img{
-    background-color: var(--backgroundproduct);
-    border-radius: 20px;
+    background-color: var(--backgroundProductos);
+    border-radius: 16px;
+    height: 224px;
+    width: 224px;
 }
 .bodyCarta{
-    padding: 0% 7.5% 0% 7.5%;
+    padding: 30px 7.5% 0% 7.5%;
+}
+.productoCarta{
+    max-width: 224px;
+    padding-top: 10px;
+}
+#tituloProductoCarta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 5px;
+    align-items: center;
+}
+#tituloProductoCarta h3{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    color: var(--colorTituloProducto);
+    font-size: 1rem;
+    font-family: "WallieChunky";
+    padding-top: 5px;
+}
+ul {
+    list-style-type: none;
+}
+@media (max-width: 991px) {
+    .columnasDerecha {
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+.pedidoProductos{
+    display: flex;
+    align-items: center;
+}
+/*PEDIDOS*/
+
+#pedido{
+    width: 30%;
+    min-height: 600px;
+    border-radius: 24px;
+    background-color: var(--colorFondoPedido);
+    color: var(--colorTituloCategoriaProducto);
+}
+#productosPedido{
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#productosPedido li{
+    padding-top: 10px;
+}
+#inputPedido{
+    padding: 10px 0px 10px 0px;
+}
+input[type="submit"] {
+    background: none;
+    border: none;
+}
+#ubicacion{
+    width: 340px;
+    height: 40px;
+    border-radius: 16px;
+    border-color: var(--colorDescripcionProducto);
+}
+.error{
+    color: red;
+}
+/*API*/
+#menuApi{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
 }

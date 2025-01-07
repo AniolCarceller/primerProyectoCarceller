@@ -1,4 +1,5 @@
 <?php
+//Archivo que crea y gestiona un SESSION para poder guardar los productos que pide el cliente
 include_once("models/DatabaseAccessObjectProductos.php");
 if (isset($_GET['id']) && $_GET['nombre'] && $_GET['precio']) {
     $productoId = $_GET['id'];
