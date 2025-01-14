@@ -34,15 +34,10 @@ class productoController {
         $dao = new DatabaseAccessObjectUsuarios();
         include "views/cuenta.php";
     }
-    public function apiView(){
-        include "views/apiView.php";
-    }
-    public function panelAdministracionUsers(){
-        include "views/menu.php";
-        include "views/panelAdministracionUsers.php";
+    public function panelAdministracion(){
+        include "views/panelAdministracion.php";
     }
     public function error404(){
-        include "views/menu.php";
         include "views/error404.php";
     }
 }
